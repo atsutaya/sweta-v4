@@ -31,8 +31,11 @@ export function PerformanceMonitor() {
       // First Input Delay
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries()
-        const fid = entries[entries.length - 1]
-        setMetrics(prev => ({ ...prev, fid: fid.processingStart - fid.startTime }))
+        const fidEntry = entries[entries.length - 1] as PerformanceEventTiming
+        if (fidEntry && 'processingStart' in fidEntry) {
+          const fidValue = fidEntry.processingStart! - fidEntry.startTime!
+          setMetrics(prev => ({ ...prev, fid: fidValue }))
+        }
       })
       fidObserver.observe({ entryTypes: ['first-input'] })
 

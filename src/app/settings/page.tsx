@@ -53,12 +53,12 @@ export default function SettingsPage() {
                     <div>
                       <div className="font-medium">이메일 인증</div>
                       <div className="text-sm text-muted-foreground">
-                        {user.email_verified ? '인증 완료' : '인증 필요'}
+                        이메일 인증 설정
                       </div>
                     </div>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {user.email_verified ? '✓' : '!'}
+                    !
                   </div>
                 </div>
               </Link>

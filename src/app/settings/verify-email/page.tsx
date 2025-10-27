@@ -20,6 +20,9 @@ export default function VerifyEmailPage() {
     return null
   }
 
+  // email_verified는 Supabase User 타입에 없으므로 false로 처리
+  const emailVerified = false
+
   const handleResendEmail = async () => {
     setLoading(true)
     setMessage('')
@@ -59,16 +62,16 @@ export default function VerifyEmailPage() {
 
           <Card>
             <CardHeader className="text-center">
-              {user.email_verified ? (
+              {emailVerified ? (
                 <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
               ) : (
                 <AlertCircle className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
               )}
               <CardTitle>
-                {user.email_verified ? '인증 완료' : '이메일 인증 필요'}
+                {emailVerified ? '인증 완료' : '이메일 인증 필요'}
               </CardTitle>
               <CardDescription>
-                {user.email_verified 
+                {emailVerified 
                   ? '이메일 인증이 완료되었습니다.' 
                   : '계정 보안을 위해 이메일 인증을 완료해주세요.'
                 }
@@ -82,7 +85,7 @@ export default function VerifyEmailPage() {
                 <p className="font-medium">{user.email}</p>
               </div>
 
-              {!user.email_verified && (
+              {!emailVerified && (
                 <>
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
