@@ -1,0 +1,582 @@
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+   - Environments: .env.local
+   - Experiments (use at your own risk):
+     · optimizeCss
+
+> [PWA] PWA support is disabled
+> [PWA] PWA support is disabled
+ ✓ Ready in 9.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.3s (814 modules)
+ ✓ Compiled in 2.1s (397 modules)
+ ○ Compiling /posts/[id] ...
+ ⨯ ./src/app/posts/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mC:\Users\home\Downloads\sweta v4\src\app\posts\[id]\page.tsx[0m:277:1]
+ [2m277[0m |   
+ [2m278[0m | 
+ [2m279[0m |   return (
+ [2m280[0m |     <div className="min-h-screen bg-gray-50">
+     : [31;1m     ^^^[0m
+ [2m281[0m |       {/* 헤더 */}
+ [2m282[0m |       <div className="bg-white border-b border-gray-200 px-4 py-3">
+ [2m282[0m |         <div className="flex items-center justify-between">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/posts/[id]/page.tsx
+ ⨯ ./src/app/posts/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mC:\Users\home\Downloads\sweta v4\src\app\posts\[id]\page.tsx[0m:277:1]
+ [2m277[0m |   
+ [2m278[0m | 
+ [2m279[0m |   return (
+ [2m280[0m |     <div className="min-h-screen bg-gray-50">
+     : [31;1m     ^^^[0m
+ [2m281[0m |       {/* 헤더 */}
+ [2m282[0m |       <div className="bg-white border-b border-gray-200 px-4 py-3">
+ [2m282[0m |         <div className="flex items-center justify-between">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/posts/[id]/page.tsx
+ ⨯ ./src/app/posts/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mC:\Users\home\Downloads\sweta v4\src\app\posts\[id]\page.tsx[0m:277:1]
+ [2m277[0m |   
+ [2m278[0m | 
+ [2m279[0m |   return (
+ [2m280[0m |     <div className="min-h-screen bg-gray-50">
+     : [31;1m     ^^^[0m
+ [2m281[0m |       {/* 헤더 */}
+ [2m282[0m |       <div className="bg-white border-b border-gray-200 px-4 py-3">
+ [2m282[0m |         <div className="flex items-center justify-between">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/posts/[id]/page.tsx
+ ⨯ Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async pipe.req.req (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1975:30)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async pipe.req.req (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1975:30)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async pipe.req.req (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1975:30)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next-server.js:225:21)
+    at async DevServer.handleRequestImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:805:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+Error: Cannot find module 'critters'
+Require stack:
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\module.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\future\route-modules\pages\builtin\_error.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\load-default-error-components.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\dev\next-dev-server.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\next.js
+- C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1410:15)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1051:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1056:22)
+    at Module._load (node:internal/modules/cjs/loader:1219:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:238:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1493:12)
+    at mod.require (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:147:30
+    at postProcessHTML (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\post-process.js:165:29)
+    at async renderToHTMLImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\render.js:953:27)
+    at async doRender (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1378:30)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1552:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1460:28)
+    at async pipe.req.req (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:1975:30)
+    at async DevServer.pipeImpl (C:\Users\home\Downloads\sweta v4\node_modules\next\dist\server\base-server.js:909:25) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\post-process.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\render.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\module.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\future\\route-modules\\pages\\builtin\\_error.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\load-default-error-components.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\home\\Downloads\\sweta v4\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ]
+}
+ ✓ Compiled /_error in 1202ms (974 modules)
+ ✓ Compiled in 979ms (981 modules)
+ ✓ Compiled in 1116ms (981 modules)
+ ○ Compiling /my-activity ...
+ ✓ Compiled /my-activity in 1453ms (981 modules)
+ ✓ Compiled /posts/create in 454ms (988 modules)
+ ✓ Compiled in 1311ms (1002 modules)
+ ✓ Compiled in 1116ms (1002 modules)
+ ✓ Compiled in 806ms (1002 modules)
+ ✓ Compiled in 1612ms (1002 modules)
+ ✓ Compiled in 854ms (1002 modules)
+ ✓ Compiled in 1401ms (1002 modules)
+ ✓ Compiled in 732ms (1002 modules)
+ ✓ Compiled in 984ms (1002 modules)
+ ✓ Compiled in 653ms (1002 modules)
+ ✓ Compiled in 1478ms (1002 modules)
+ ✓ Compiled in 464ms (1002 modules)
+ ✓ Compiled in 5.3s (532 modules)
+ ✓ Compiled in 863ms (532 modules)
+ ✓ Compiled in 911ms (532 modules)
+ ✓ Compiled in 2.7s (1002 modules)
+ ✓ Compiled in 883ms (1002 modules)
+ ✓ Compiled /not-found in 484ms (993 modules)
