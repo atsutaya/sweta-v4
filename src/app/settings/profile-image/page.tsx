@@ -58,7 +58,7 @@ export default function ProfileImagePage() {
       // 임시 구현 - 실제로는 Supabase Storage에 업로드
       await new Promise(resolve => setTimeout(resolve, 2000)) // 2초 대기
       
-      setMessage('프로필 이미지가 성공적으로 변경되었습니다. (임시 구현)')
+      setMessage('데이터 베이스 용량 문제로 임시 구현 상태입니다.')
       setSelectedFile(null)
     } catch (error: any) {
       setMessage('이미지 업로드에 실패했습니다: ' + error.message)
