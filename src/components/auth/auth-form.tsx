@@ -80,10 +80,12 @@ export function AuthForm() {
   const handleOAuth = async (provider: 'google' | 'github') => {
     try {
       setError('')
+      const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : ''))
+      const redirectTo = siteUrl ? `${siteUrl}/auth/callback` : undefined
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}`
+          redirectTo
         }
       })
       if (error) throw error

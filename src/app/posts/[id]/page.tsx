@@ -70,6 +70,18 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
             setLikeCount(postData.likes_count || 0)
             setScrapCount(postData.scraps_count || 0)
           }
+          // 신뢰성 강화를 위해 서버에서 실제 like 수 재계산 (트리거 미동작 대비)
+          try {
+            const { count } = await supabase
+              .from('post_reactions')
+              .select('id', { count: 'exact', head: true })
+              .eq('post_id', postData.id)
+              .eq('reaction_type', 'like')
+            if (typeof count === 'number') {
+              setLikeCount(count)
+              setPost((p: any) => ({ ...p, likes_count: count }))
+            }
+          } catch {}
         }
 
         const { data: commentsData } = await supabase
@@ -391,6 +403,18 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
           throw insertError
         }
       }
+      // 서버 기준 최신 카운트로 동기화 (페이지 이탈 후 0으로 보이는 현상 방지)
+      try {
+        const { count } = await supabase
+          .from('post_reactions')
+          .select('id', { count: 'exact', head: true })
+          .eq('post_id', post.id)
+          .eq('reaction_type', 'like')
+        if (typeof count === 'number') {
+          setLikeCount(count)
+          setPost((p: any) => ({ ...p, likes_count: count }))
+        }
+      } catch {}
     } catch (e) {
       // 서버 실패 시 UI 되돌림
       setIsLiked(wasLiked)
