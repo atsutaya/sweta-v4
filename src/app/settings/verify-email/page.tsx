@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState } from 'react'
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
@@ -7,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowLeft, Mail, CheckCircle, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 
 export default function VerifyEmailPage() {
@@ -15,10 +18,12 @@ export default function VerifyEmailPage() {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   // email_verified는 Supabase User 타입에 없으므로 false로 처리
   const emailVerified = false

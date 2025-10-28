@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+export const dynamic = 'force-dynamic'
+
+import { useEffect, useState } from 'react'
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -21,10 +23,12 @@ export default function ChangePasswordPage() {
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

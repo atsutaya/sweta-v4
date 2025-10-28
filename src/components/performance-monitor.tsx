@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
+type LayoutShiftEntry = PerformanceEntry & { value: number; hadRecentInput: boolean }
+function isLayoutShiftEntry(entry: PerformanceEntry): entry is LayoutShiftEntry {
+  return entry != null && 'value' in (entry as any) && 'hadRecentInput' in (entry as any)
+}
+
 export function PerformanceMonitor() {
   const [metrics, setMetrics] = useState({
     fcp: 0,
@@ -43,10 +48,8 @@ export function PerformanceMonitor() {
       const clsObserver = new PerformanceObserver((list) => {
         let cls = 0
         for (const entry of list.getEntries()) {
-          const ls = entry as any // Narrow to LayoutShift safely
-          if (ls && 'hadRecentInput' in ls && !ls.hadRecentInput) {
-            const value = typeof ls.value === 'number' ? ls.value : 0
-            cls += value
+          if (isLayoutShiftEntry(entry) && !entry.hadRecentInput) {
+            cls += typeof entry.value === 'number' ? entry.value : 0
           }
         }
         setMetrics(prev => ({ ...prev, cls }))

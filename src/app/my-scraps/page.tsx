@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -17,10 +19,13 @@ export default function MyScrapsPage() {
   const router = useRouter()
   const [scrappedPosts, setScrappedPosts] = useState<any[]>([])
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  // SSR/프리렌더 안전 리다이렉트
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   useEffect(() => {
     const load = async () => {

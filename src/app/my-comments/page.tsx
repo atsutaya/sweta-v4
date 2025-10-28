@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -17,10 +19,13 @@ export default function MyCommentsPage() {
   const [commentsWithPosts, setCommentsWithPosts] = useState<{ comment: any, post: any }[]>([])
   const [loading, setLoading] = useState(true)
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  // SSR/프리렌더 안전 리다이렉트
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   useEffect(() => {
     (async () => {

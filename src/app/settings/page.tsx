@@ -1,20 +1,26 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ArrowLeft, User, Shield, Mail, Key, Palette, UserCheck } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function SettingsPage() {
   const { user } = useSupabase()
   const router = useRouter()
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  // SSR/프리렌더 안전 리다이렉트
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   return (
     <div className="min-h-screen bg-background">

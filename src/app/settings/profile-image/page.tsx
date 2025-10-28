@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+export const dynamic = 'force-dynamic'
+
+import { useEffect, useState } from 'react'
 import { useSupabase } from '@/components/supabase-provider'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -15,10 +17,12 @@ export default function ProfileImagePage() {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
 
-  if (!user) {
-    router.push('/auth')
-    return null
-  }
+  useEffect(() => {
+    if (!user) {
+      router.push('/auth')
+    }
+  }, [user, router])
+  if (!user) return null
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
