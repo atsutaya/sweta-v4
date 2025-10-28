@@ -38,8 +38,10 @@ export function formatDate(date: string | Date) {
   
   // 캐시에 저장 (최대 100개 항목 유지)
   if (dateCache.size > 100) {
-    const firstKey = dateCache.keys().next().value
-    dateCache.delete(firstKey)
+    const firstKey = dateCache.keys().next().value as string | undefined
+    if (firstKey !== undefined) {
+      dateCache.delete(firstKey)
+    }
   }
   dateCache.set(dateStr, result)
   

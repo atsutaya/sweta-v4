@@ -12,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 10 * 60 * 1000, // 10분으로 증가 (더 적은 리페치)
-            gcTime: 15 * 60 * 1000, // 15분 (메모리에서 더 오래 유지)
+            cacheTime: 15 * 60 * 1000, // v4: gcTime 대신 cacheTime 사용
             refetchOnWindowFocus: false, // 윈도우 포커스 시 자동 리페치 비활성화
             refetchOnReconnect: false, // 재연결 시 자동 리페치 비활성화
             retry: 1, // 재시도 횟수 제한

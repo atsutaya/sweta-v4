@@ -43,8 +43,10 @@ export function PerformanceMonitor() {
       const clsObserver = new PerformanceObserver((list) => {
         let cls = 0
         for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) {
-            cls += (entry as any).value
+          const ls = entry as any // Narrow to LayoutShift safely
+          if (ls && 'hadRecentInput' in ls && !ls.hadRecentInput) {
+            const value = typeof ls.value === 'number' ? ls.value : 0
+            cls += value
           }
         }
         setMetrics(prev => ({ ...prev, cls }))
