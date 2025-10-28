@@ -43,8 +43,8 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* 로고 */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg font-bold">A</span>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-blue-100">
+              <span className="text-blue-600 text-lg font-bold">S</span>
             </div>
             <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
               사우고 에타

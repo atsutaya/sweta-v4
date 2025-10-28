@@ -501,8 +501,8 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
           {/* 게시글 헤더 */}
           <div className="flex items-center mb-4">
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-medium mr-3">
-              <span className="text-sm font-bold">A</span>
+            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium mr-3">
+              <span className="text-sm font-bold">S</span>
             </div>
             <div>
               <div className="text-sm text-gray-500">익명 사용자</div>
