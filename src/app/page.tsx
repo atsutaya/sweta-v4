@@ -35,10 +35,6 @@ export default function HomePage() {
 
           {/* 전체 게시글 섹션 */}
           <div className="mb-4">
-            <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-blue-500" />
-              전체 게시글
-            </h2>
             <PostList />
           </div>
         </div>

@@ -100,6 +100,30 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
             anonymous_number: typeof c.anonymous_number === 'number' ? c.anonymous_number : 0,
           }))
           setComments(normalized)
+          // 서버 기준 실제 집계로 보정 (트리거 미동작/지연 대비)
+          try {
+            const commentIds = normalized.map((c: any) => c.id)
+            if (commentIds.length > 0) {
+              const { data: agg } = await supabase
+                .from('comment_reactions')
+                .select('comment_id,reaction_type,count:count(*)')
+                .in('comment_id', commentIds)
+                .group('comment_id,reaction_type')
+              if (Array.isArray(agg)) {
+                const likeCountById: Record<string, number> = {}
+                const dislikeCountById: Record<string, number> = {}
+                for (const row of agg as any[]) {
+                  if (row.reaction_type === 'like') likeCountById[row.comment_id] = row.count || 0
+                  if (row.reaction_type === 'dislike') dislikeCountById[row.comment_id] = row.count || 0
+                }
+                setComments(prev => prev.map(c => ({
+                  ...c,
+                  likes_count: likeCountById[c.id] ?? c.likes_count ?? 0,
+                  dislikes_count: dislikeCountById[c.id] ?? c.dislikes_count ?? 0,
+                })))
+              }
+            }
+          } catch {}
           // 현재 사용자 반응 로드
           if (user && normalized.length > 0) {
             const commentIds = normalized.map((c: any) => c.id)
@@ -689,6 +713,22 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
                         setComments(prev => prev.map(c => c.id === comment.id ? { ...c, likes_count: (c.likes_count || 0) + 1 } : c))
                         setUserReactionByCommentId(prev => ({ ...prev, [comment.id]: 'like' }))
                       }
+                      // 서버 집계로 최종 동기화
+                      try {
+                        const { data: aggOne } = await supabase
+                          .from('comment_reactions')
+                          .select('reaction_type,count:count(*)')
+                          .eq('comment_id', comment.id)
+                          .group('reaction_type')
+                        if (Array.isArray(aggOne)) {
+                          let likeN = 0, dislikeN = 0
+                          for (const row of aggOne as any[]) {
+                            if (row.reaction_type === 'like') likeN = row.count || 0
+                            if (row.reaction_type === 'dislike') dislikeN = row.count || 0
+                          }
+                          setComments(prev => prev.map(c => c.id === comment.id ? { ...c, likes_count: likeN, dislikes_count: dislikeN } : c))
+                        }
+                      } catch {}
                       setPendingReactions(prev => ({ ...prev, [comment.id]: false }))
                     }}
                   >
@@ -733,6 +773,22 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
                         setComments(prev => prev.map(c => c.id === comment.id ? { ...c, dislikes_count: (c.dislikes_count || 0) + 1 } : c))
                         setUserReactionByCommentId(prev => ({ ...prev, [comment.id]: 'dislike' }))
                       }
+                      // 서버 집계로 최종 동기화
+                      try {
+                        const { data: aggOne } = await supabase
+                          .from('comment_reactions')
+                          .select('reaction_type,count:count(*)')
+                          .eq('comment_id', comment.id)
+                          .group('reaction_type')
+                        if (Array.isArray(aggOne)) {
+                          let likeN = 0, dislikeN = 0
+                          for (const row of aggOne as any[]) {
+                            if (row.reaction_type === 'like') likeN = row.count || 0
+                            if (row.reaction_type === 'dislike') dislikeN = row.count || 0
+                          }
+                          setComments(prev => prev.map(c => c.id === comment.id ? { ...c, likes_count: likeN, dislikes_count: dislikeN } : c))
+                        }
+                      } catch {}
                       setPendingReactions(prev => ({ ...prev, [comment.id]: false }))
                     }}
                   >
