@@ -11,27 +11,22 @@ export default function HomePage() {
       <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div className="max-w-6xl mx-auto">
           {/* 헤더 섹션 */}
-          <div className="mb-6 sm:mb-8">
+          <div className="mb-6 sm:mb-8 hidden sm:block">
             <div className="flex items-center justify-between">
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+              <h1 className="text-3xl font-bold text-foreground">
                 사우고 에타
               </h1>
-              <div className="hidden sm:block">
-                <CreatePostButton />
-              </div>
+              <CreatePostButton />
             </div>
           </div>
 
           {/* 인기 게시글 섹션 */}
           <Card className="mb-6 sm:mb-8">
             <CardHeader className="pb-3 sm:pb-6">
-              <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
-                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
+              <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
+                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-orange-500" />
                 인기 게시글
               </CardTitle>
-              <CardDescription className="text-sm sm:text-base">
-                좋아요, 댓글, 스크랩을 종합한 인기 게시글입니다
-              </CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
               <TrendingPosts />

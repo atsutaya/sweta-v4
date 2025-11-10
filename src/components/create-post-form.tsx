@@ -214,7 +214,7 @@ export function CreatePostForm() {
         <Button
           type="submit"
           disabled={loading}
-          className="flex-1"
+          className={`flex-1 transition-colors ${loading ? 'bg-muted text-muted-foreground hover:bg-muted focus-visible:ring-muted' : ''}`}
         >
           {loading ? '작성 중...' : '작성하기'}
         </Button>

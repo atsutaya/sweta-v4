@@ -24,7 +24,6 @@ type PostWithScore = PostRecord & { popularityScore: number }
 
 const calculatePopularityScore = (post: PostRecord): number => {
   const likes = post.likes_count ?? 0
-  const comments = post.comments_count ?? 0
   const scraps = post.scraps_count ?? 0
 
   const now = Date.now()
@@ -35,7 +34,7 @@ const calculatePopularityScore = (post: PostRecord): number => {
 
   const timeWeight = hoursAgo < 24 ? 1.5 : hoursAgo < 168 ? 1.2 : 1.0
 
-  return (likes + comments * 2 + scraps * 3) * timeWeight
+  return (likes * 3 + scraps * 5) * timeWeight
 }
 
 const buildFallbackPosts = (): PostWithScore[] =>
@@ -139,16 +138,16 @@ export function TrendingPosts() {
                       ? 'text-yellow-600'
                       : index === 1
                       ? 'text-gray-500'
-                      : 'text-amber-600'
+                      : 'text-orange-700'
                   }`}
                 >
                   <div
                     className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       index === 0
-                        ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white'
+                        ? 'bg-gradient-to-r from-yellow-300 to-yellow-500 text-white'
                         : index === 1
                         ? 'bg-gradient-to-r from-gray-300 to-gray-400 text-white'
-                        : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white'
+                        : 'bg-gradient-to-r from-orange-500 to-amber-700 text-white'
                     }`}
                   >
                     {index + 1}
