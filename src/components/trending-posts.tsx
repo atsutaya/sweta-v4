@@ -37,14 +37,27 @@ const calculatePopularityScore = (post: PostRecord): number => {
   return (likes * 3 + scraps * 5) * timeWeight
 }
 
-const buildFallbackPosts = (): PostWithScore[] =>
-  [...samplePosts]
+const getLocalAndSamplePosts = (): PostRecord[] => {
+  try {
+    const local = JSON.parse(
+      typeof window !== 'undefined' ? localStorage.getItem('samplePosts') || '[]' : '[]'
+    )
+    return [...(Array.isArray(local) ? local : []), ...samplePosts]
+  } catch {
+    return [...samplePosts]
+  }
+}
+
+const buildFallbackPosts = (): PostWithScore[] => {
+  const base = getLocalAndSamplePosts()
+  return base
     .map((post: any) => ({
       ...post,
       popularityScore: calculatePopularityScore(post),
     }))
     .sort((a, b) => b.popularityScore - a.popularityScore)
     .slice(0, 3)
+}
 
 export function TrendingPosts() {
   const { supabase } = useSupabase()

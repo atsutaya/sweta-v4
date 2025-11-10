@@ -3,7 +3,7 @@ import { TrendingPosts } from '@/components/trending-posts'
 import { CreatePostButton } from '@/components/create-post-button'
 import { FloatingCreateButton } from '@/components/floating-create-button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { MessageSquare, TrendingUp, Users, BookOpen } from 'lucide-react'
+import { TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
   return (
