@@ -104,17 +104,16 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
           try {
             const commentIds = normalized.map((c: any) => c.id)
             if (commentIds.length > 0) {
-              const { data: agg } = await supabase
+              const { data: rows } = await supabase
                 .from('comment_reactions')
-                .select('comment_id,reaction_type,count:count(*)')
+                .select('comment_id,reaction_type')
                 .in('comment_id', commentIds)
-                .group('comment_id,reaction_type')
-              if (Array.isArray(agg)) {
+              if (Array.isArray(rows)) {
                 const likeCountById: Record<string, number> = {}
                 const dislikeCountById: Record<string, number> = {}
-                for (const row of agg as any[]) {
-                  if (row.reaction_type === 'like') likeCountById[row.comment_id] = row.count || 0
-                  if (row.reaction_type === 'dislike') dislikeCountById[row.comment_id] = row.count || 0
+                for (const r of rows as any[]) {
+                  if (r.reaction_type === 'like') likeCountById[r.comment_id] = (likeCountById[r.comment_id] || 0) + 1
+                  if (r.reaction_type === 'dislike') dislikeCountById[r.comment_id] = (dislikeCountById[r.comment_id] || 0) + 1
                 }
                 setComments(prev => prev.map(c => ({
                   ...c,
@@ -715,16 +714,15 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
                       }
                       // 서버 집계로 최종 동기화
                       try {
-                        const { data: aggOne } = await supabase
+                        const { data: rowsOne } = await supabase
                           .from('comment_reactions')
-                          .select('reaction_type,count:count(*)')
+                          .select('reaction_type')
                           .eq('comment_id', comment.id)
-                          .group('reaction_type')
-                        if (Array.isArray(aggOne)) {
+                        if (Array.isArray(rowsOne)) {
                           let likeN = 0, dislikeN = 0
-                          for (const row of aggOne as any[]) {
-                            if (row.reaction_type === 'like') likeN = row.count || 0
-                            if (row.reaction_type === 'dislike') dislikeN = row.count || 0
+                          for (const r of rowsOne as any[]) {
+                            if (r.reaction_type === 'like') likeN += 1
+                            if (r.reaction_type === 'dislike') dislikeN += 1
                           }
                           setComments(prev => prev.map(c => c.id === comment.id ? { ...c, likes_count: likeN, dislikes_count: dislikeN } : c))
                         }
@@ -775,16 +773,15 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
                       }
                       // 서버 집계로 최종 동기화
                       try {
-                        const { data: aggOne } = await supabase
+                        const { data: rowsOne } = await supabase
                           .from('comment_reactions')
-                          .select('reaction_type,count:count(*)')
+                          .select('reaction_type')
                           .eq('comment_id', comment.id)
-                          .group('reaction_type')
-                        if (Array.isArray(aggOne)) {
+                        if (Array.isArray(rowsOne)) {
                           let likeN = 0, dislikeN = 0
-                          for (const row of aggOne as any[]) {
-                            if (row.reaction_type === 'like') likeN = row.count || 0
-                            if (row.reaction_type === 'dislike') dislikeN = row.count || 0
+                          for (const r of rowsOne as any[]) {
+                            if (r.reaction_type === 'like') likeN += 1
+                            if (r.reaction_type === 'dislike') dislikeN += 1
                           }
                           setComments(prev => prev.map(c => c.id === comment.id ? { ...c, likes_count: likeN, dislikes_count: dislikeN } : c))
                         }
