@@ -397,7 +397,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
     // 낙관적 업데이트 (즉시 반응성)
     const wasLiked = isLiked
     setIsLiked(!wasLiked)
-    setLikeCount(prev => prev + (wasLiked ? -1 : 1))
+    setLikeCount(prev => Math.max(0, prev + (wasLiked ? -1 : 1)))
     setPost((p: any) => ({ ...p, likes_count: Math.max(0, (p?.likes_count || 0) + (wasLiked ? -1 : 1)) }))
 
     try {
@@ -441,7 +441,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
     } catch (e) {
       // 서버 실패 시 UI 되돌림
       setIsLiked(wasLiked)
-      setLikeCount(prev => prev + (wasLiked ? 1 : -1))
+      setLikeCount(prev => Math.max(0, prev + (wasLiked ? 1 : -1)))
       setPost((p: any) => ({ ...p, likes_count: Math.max(0, (p?.likes_count || 0) + (wasLiked ? 1 : -1)) }))
     }
   }
@@ -457,7 +457,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
     const wasScrapped = isScrapped
     const next = !wasScrapped
     setIsScrapped(next)
-    setScrapCount(prev => prev + (next ? 1 : -1))
+    setScrapCount(prev => Math.max(0, prev + (next ? 1 : -1)))
     setPost((p: any) => ({ ...p, scraps_count: Math.max(0, (p?.scraps_count || 0) + (next ? 1 : -1)) }))
     
     try {
@@ -492,10 +492,21 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
               window.dispatchEvent(new CustomEvent('scrap-updated'))
             }
           }
+          // 서버 기준 스크랩 수로 동기화 (트리거 지연/로컬 상태 불일치 방지)
+          try {
+            const { count } = await supabase
+              .from('scraps')
+              .select('id', { count: 'exact', head: true })
+              .eq('post_id', post.id)
+            if (typeof count === 'number') {
+              setScrapCount(count)
+              setPost((p: any) => ({ ...p, scraps_count: count }))
+            }
+          } catch {}
         } catch {
           // 서버 실패 시 UI 되돌림
           setIsScrapped(wasScrapped)
-          setScrapCount(prev => prev + (wasScrapped ? 1 : -1))
+          setScrapCount(prev => Math.max(0, prev + (wasScrapped ? 1 : -1)))
           setPost((p: any) => ({ ...p, scraps_count: Math.max(0, (p?.scraps_count || 0) + (wasScrapped ? 1 : -1)) }))
         }
       })()

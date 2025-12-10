@@ -5,7 +5,7 @@ import { useSupabase } from './supabase-provider'
 import { Button } from './ui/button'
 import { ThumbsUp, ThumbsDown, Flag } from 'lucide-react'
 import { toast } from '@/hooks/use-toast'
-import { supabase, checkAndBlindPost } from '@/lib/supabase'
+import { checkAndBlindPost } from '@/lib/supabase'
 import { useQueryClient } from '@tanstack/react-query'
 
 interface PostActionsProps {
@@ -17,7 +17,7 @@ interface PostActionsProps {
 }
 
 export function PostActions({ post }: PostActionsProps) {
-  const { user } = useSupabase()
+  const { user, supabase } = useSupabase()
   const queryClient = useQueryClient()
   const [loading, setLoading] = useState(false)
 
