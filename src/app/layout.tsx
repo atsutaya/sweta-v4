@@ -9,9 +9,25 @@ import { Toaster } from '@/components/ui/toaster'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sawooeta.com'),
   title: '사우고 에타',
   description: '사우고 학생들의 커뮤니티',
   manifest: '/manifest.json',
+  alternates: {
+    canonical: 'https://sawooeta.com',
+  },
+  openGraph: {
+    title: '사우고 에타',
+    description: '사우고 학생들의 커뮤니티',
+    url: 'https://sawooeta.com',
+    siteName: '사우고 에타',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '사우고 에타',
+    description: '사우고 학생들의 커뮤니티',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
