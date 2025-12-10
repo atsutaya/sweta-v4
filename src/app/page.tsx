@@ -6,6 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { TrendingUp } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
+export const metadata = {
+  title: '사우고 에타',
+  description: '사우고 학생들을 위한 익명 커뮤니티. 인기 글, 최신 글, 댓글과 스크랩을 한 곳에서 확인하세요.',
+  keywords: ['사우고', '에타', '익명 게시판', '학교 커뮤니티', '인기글', '스크랩', '댓글'],
+}
 
 export default function HomePage() {
   return (
