@@ -116,7 +116,7 @@ export function AuthForm() {
             현재 학교 계정만 이용 가능합니다
           </p>
           <p className="text-xs text-red-600 mt-1">
-            허용된 도메인: {getAllowedDomainsString()}
+            하단의 구글로 로그인 / 회원가입을 눌러주세요
           </p>
         </div>
       </div>
@@ -154,7 +154,7 @@ export function AuthForm() {
           />
           {!isLogin && (
             <p className="text-xs text-muted-foreground mt-1">
-              학교 이메일만 가입 가능합니다. ({getAllowedDomainsString()})
+              하단의 구글로 로그인 / 회원가입을 눌러주세요
             </p>
           )}
         </div>
